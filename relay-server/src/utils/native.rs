@@ -42,6 +42,7 @@ struct NativePlaceholder {
 /// What to do with additional exceptions in a minidump / apple crash report event.
 pub enum AdditionalExceptions {
     Retain,
+    #[cfg_attr(not(sentry), allow(dead_code))] // only used by the PlayStation processor and tests
     Delete,
 }
 
